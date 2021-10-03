@@ -39,5 +39,9 @@ useEffect(() => {
 return [data, loading, error];
 };
 
+export const setData = (path, value) => (
+  set(ref(database, path), value)
+);
+
 const firebase = initializeApp(firebaseConfig);
 const database = getDatabase(firebase);
